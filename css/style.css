@@ -1,0 +1,574 @@
+html, body{ 
+
+  /*background: url(img/background/1.jpg) no-repeat center center fixed; */
+  background-color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+	display: block;
+	cursor:crosshair;
+  border: 7px solid black;
+	margin:0px;
+  font-size: 11.5pt;
+  color: black;
+  -webkit-font-smoothing: antialiased;
+
+  font-family: 'Advent Pro', sans-serif;
+  font-weight: bold; 
+  font-size: 11.5pt;
+  color: yellow;
+
+
+}
+
+a{
+  cursor:crosshair;
+}
+
+a:hover{
+  cursor:crosshair;
+}
+
+#menu{
+  padding-top: 2%;
+  margin-left: 2%;
+  font-size: 11.5pt;
+  width: 15%;
+  float: left;
+}
+
+#logoimg{
+  width: 30px;
+}
+
+#logo{
+ text-transform: uppercase;
+ padding-top: 3%;
+color: yellow;
+}
+
+#login{
+  float: right;
+  width: 12%;
+  padding-top: 1.5%;
+  margin-right: 0%;
+}
+
+.black{
+  color: black;
+}
+
+
+#login ul {
+    list-style-type: none;
+}
+
+#login ul li {
+    display: inline-block;
+    margin-right: 7%;
+}
+
+#login ul li a{
+    text-decoration: none;
+
+  color: yellow;
+}
+
+#loginsvg{
+  stroke: yellow;
+  stroke-width: 7;
+}
+
+
+#loginlink{
+  list-style: none;
+}
+
+
+#loginlink a:hover{  
+  border-bottom: 2px solid;
+}
+
+
+#logincontent{
+  display: none;
+  background-color: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  z-index: 5; 
+  list-style: none;
+    margin-left: -9.7%;
+  width: 263px;
+
+  padding-left: 25px;
+  padding-right: 20px;
+  padding-top: 15px;
+  border: 5px solid yellow;
+  line-height: 19px;
+}
+
+#inputs input{
+ width: 200px;
+ text-transform: uppercase;
+
+}
+
+#inputs input, textarea {
+
+  padding-top: 5px;
+  background-color : rgba(209, 209, 209, 0);
+  border:0;
+}
+
+#inputs textarea:focus, input:focus{
+    outline: 0;
+}
+
+::-webkit-input-placeholder {
+   color: yellow;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: yellow;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: yellow;  
+}
+
+:-ms-input-placeholder {  
+   color: yellow;  
+}
+
+input:focus::-webkit-input-placeholder 
+{
+    color: transparent;
+}
+
+#actions{
+  padding-top: 15px;
+}
+
+
+#actions #submit {
+  background-color: rgba(209, 209, 209, 0);
+  border: 0;
+  float: right;
+  margin-right: 3px;
+  margin-top: -13px;
+}
+
+
+
+#menulink{
+  padding-top: 1px;
+	list-style: none;
+  font-size: 11.5pt;
+}
+
+#menulink ul{
+-webkit-padding-start: 0px;
+  margin-top: 13px;
+  margin-bottom: 0px;
+}
+
+#menulink a{	
+	cursor:crosshair;
+	outline: none;
+	border-style: none;
+    color: yellow;
+}
+
+#menulink a:hover{	
+  border-bottom: 2px solid;
+}
+
+#menu .active{
+	border-bottom: 2px solid;
+}
+
+
+
+
+/* INDEX */
+
+#divIndex{
+  width: 80%;
+  float: left;
+  position: relative;
+  padding-top: 13%;
+  font-weight: bold;
+}
+
+
+#hello{
+  font-family: 'Advent Pro' ;
+  text-transform: uppercase;
+  font-size: 11.5pt;
+  font-weight: bold;
+  color: yellow;
+  margin-left: 26%;
+  width: 31%;
+  padding: 15px;
+  padding-left: 25px;
+  padding-right: 20px;
+  border: 5px solid yellow;
+  line-height: 19px;
+}
+
+#ios, #android{
+  font-family: 'Advent Pro' ;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 11.5pt;
+  font-weight: bold;
+  color: yellow;
+  width: 15%;
+  padding: 5px;
+  border: 5px solid yellow;
+  margin-top: 0px;
+}
+
+#ios{
+  float: left;
+  margin-left: 26%;
+
+}
+
+#android{
+  float: right;
+  margin-right: 43%;
+}
+
+h1, h2{
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+
+
+/* SIGN IN */
+
+#divSignin{
+  width: 80%;
+  float: left;
+  position: relative;
+  padding-top: 4%;
+  padding-left: 10%;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+#signin{
+  list-style: none;
+}
+
+#male{
+  margin-left: 3%;
+}
+
+/* Remove default checkbox */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {  
+  position: relative;
+  overflow: hidden;
+  padding-left: 25px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 20px;
+
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+}
+
+/* checkbox aspect */
+[type="checkbox"] + label:before,
+[type="checkbox"] + label:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+/* Unchecked styles */
+[type="checkbox"]:not(:checked) + label:before {
+  top: 0px;
+  width: 19px; height: 19px;
+  border: 3px solid #ddd;
+}
+[type="checkbox"]:not(:checked) + label:after {
+  top: 0px;
+  width: 19px; height: 19px;
+  border: 3px solid #000;
+  z-index: 0;
+}
+/* Checked styles */
+[type="checkbox"]:checked + label:before {
+  top: 2px;
+  width: 6px; height: 12px;
+  border-top: 3px solid transparent;
+  border-left: 3px solid transparent;
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+  -webkit-transform: rotateZ(37deg);
+  transform: rotateZ(37deg);
+
+  -webkit-transform-origin: 20% 40%;
+  transform-origin: 100% 100%;
+}
+[type="checkbox"]:checked + label:after {
+  top: 0px;
+  width: 19px; height: 19px;
+  border: 3px solid #000;
+  background-color: #000;
+  z-index: 0;
+}
+
+
+/* Dark Version */
+/* Unchecked styles */
+form.dark [type="checkbox"] + label {
+  color: #000;
+}
+form.dark [type="checkbox"]:not(:checked) + label:before,
+form.dark [type="checkbox"]:not(:checked) + label:after {
+  border-color: #000;
+}
+/* Checked styles */
+form.dark [type="checkbox"]:checked + label:before {
+  border-right: 3px solid #000;
+  border-bottom: 3px solid #000;
+}
+form.dark [type="checkbox"]:checked + label:after {
+  border-color: #000;
+  background-color: #000;
+}
+/* disabled checkbox */
+form.dark [type="checkbox"]:disabled:not(:checked) + label:before,
+form.dark [type="checkbox"]:disabled:checked + label:before {
+  background-color: #000;
+  border-color: #000;
+}
+form.dark [type="checkbox"]:disabled + label {
+  color: #000;
+}
+form.dark [type="checkbox"]:disabled:not(:checked) + label:hover:before {
+  border-color: #000;
+}
+
+
+
+#birthdayoption{
+  border: 3px solid black;
+  width: 95px;
+  margin-right: 9px;
+  margin-top: 1%;
+  font-weight: 400;
+}
+
+
+#birthdayoption:focus{
+outline: 0;
+}
+
+
+#signinform{
+  z-index: 5; 
+  list-style: none;
+  width: 263px;
+  line-height: 19px;
+}
+
+#signinform input{
+  padding-top: 13px;
+  color: black;
+  border: 0;
+  z-index: 5; 
+  list-style: none;
+  width: 263px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+#submit{
+  padding-top: 15px;
+  text-transform: uppercase;
+  float: right;
+  margin-right: 38%;
+  background: transparent;
+  border: 0px;
+}
+
+
+/* ABOUT */
+
+#divabout{
+  width: 80%;
+  float: left;
+  margin-left: 2.5%;
+  margin-top: 2%;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+#divabout ul
+{
+list-style-type: none;
+}
+
+#divabout ul li { 
+  display: inline-block; 
+  margin-right: 8%;
+  width: 20%;
+}
+
+#divabout ul li a
+{
+text-decoration: none;
+}
+
+#aboutimg{
+  display: inline; 
+  width: 70%;
+}
+
+#divabout h10 {
+}
+
+#divabout h11 {
+  text-transform: none;  
+  font-family: 'Roboto';
+  font-weight: 300;
+   font-size: 10pt;
+}
+
+#aboutsvg{
+  stroke: black;
+  stroke-width: 3;
+}
+
+
+/*  CONTACT  */
+
+#divContact{
+  width: 80%;
+  float: left;
+  position: relative;
+  padding-top: 6%;
+  padding-left: 10%;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+#contact{
+  list-style: none;
+}
+
+#contactform{
+  z-index: 5; 
+  list-style: none;
+  width: 263px;
+  line-height: 19px;
+}
+
+#contactform input{
+  padding-top: 13px;
+  color: black;
+  border: 0;
+  z-index: 5; 
+  list-style: none;
+  width: 263px;
+  line-height: 19px;
+  text-transform: uppercase;
+}
+
+#textarea{
+  width: 550px;
+  height: 120px;
+  border: 4px solid #000000;
+  padding: 5px;
+  outline: 0;
+  font-family: 'Oswald';
+  font-weight: 400;
+  font-size: 10.5pt;
+}
+
+#submitcontact{
+  padding-top: 15px;
+  text-transform: uppercase;
+  float: right;
+  margin-right: 40.6%;
+  background: transparent;
+  border: 0px;
+}
+
+/* TEAM */ 
+
+
+
+#tabelaTeam{
+  width: 80%;
+  float: left;
+  border-spacing: 8px;
+  border-collapse: inherit;
+  line-height: 14.5px;
+}
+
+
+#divImgTeam{
+  width: 200px;
+  height: 100px;
+  overflow: hidden; 
+  position: relative;
+  border-style: solid;
+  border-width: 7px;
+  margin-bottom: 11px;
+}
+
+
+#imgTeam{
+ position: relative; 
+ width: 100%;
+}
+
+
+h13 {
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 10pt;
+  text-transform: uppercase;
+}
+
+
+h14 {
+  text-transform: none;  
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 10pt;
+
+}
+
+#tabelaTeam #aboutsvg{
+  margin-top: 15px;
+  margin-bottom: 5px;
+}

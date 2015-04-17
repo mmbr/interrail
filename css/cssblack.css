@@ -1,0 +1,50 @@
+#logo{
+color: black;
+}
+
+#menulink a{  
+    color: black;
+}
+
+#login ul li a{
+  color: black;
+}
+
+  ::-webkit-input-placeholder { /* WebKit browsers */
+    color:    black;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    black;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    black;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    black;
+}
+
+
+
+#logincontent{
+  display: none;
+  background-color: yellow;
+  position: absolute;
+  z-index: 5; 
+  list-style: none;
+  margin-left: -9.7%;
+  width: 263px;
+
+  padding-left: 25px;
+  padding-right: 20px;
+  padding-top: 15px;
+  border: 5px solid black;
+  line-height: 19px;
+}
+
+#loginsvg{
+  stroke: black;
+  stroke-width: 7;
+}
+
