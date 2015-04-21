@@ -1,4 +1,84 @@
-<?php include("header.php"); ?>
+<?php include("header.php");
+	if(!empty($_POST)) { 
+		if (isset($_POST['singin'])){
+			if(empty($_POST['username'])){  
+				die("Please enter a username."); 
+			} 
+			 
+			if(empty($_POST['password'])){ 
+				die("Please enter a password."); 
+			} 
+			 
+			if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){ 
+				die("Invalid E-Mail Address"); 
+			} 
+			  
+			$query = "SELECT 1 FROM people WHERE username = :username"; 
+			 
+			$query_params = array( 
+				':username' => $_POST['username'] 
+			); 
+			 
+			$stmt = $db->prepare($query); 
+			$result = $stmt->execute($query_params); 
+			 
+			$row = $stmt->fetch(); 
+			  
+			if($row){ 
+				die("This username is already in use"); 
+			} 
+			 
+			$query = "SELECT 1 FROM people WHERE email = :email"; 
+			 
+			$query_params = array( 
+				':email' => $_POST['email'] 
+			); 
+			 
+			$stmt = $db->prepare($query); 
+			$result = $stmt->execute($query_params);
+			 
+			$row = $stmt->fetch(); 
+			 
+			if($row){ 
+				die("This email address is already registered"); 
+			} 
+			  
+			$query = "INSERT INTO people ( username, password, salt, name, email, city, birthday) VALUES ( :username, :password, :salt, :name, :email, :city, :birthday ) "; 
+			 
+			$salt = dechex(mt_rand(0, 2147483647)) . dechex(mt_rand(0, 2147483647)); 
+			 
+			$password = hash('sha256', $_POST['password'] . $salt); 
+			  
+			for($round = 0; $round < 65536; $round++) 
+			{ 
+				$password = hash('sha256', $password . $salt); 
+			} 
+			  
+			$query_params = array(  
+				':username' => $_POST['username'], 
+				':password' => $password, 
+				':salt' => $salt, 
+				':name' => $_POST['firstname']." ".$_POST['lastname'], 
+				':email' => $_POST['email']	,
+				':birthday' => date($_POST['birthdayyer']."-".$_POST['birthdaymon']."-".$_POST['birthdayday']." H:i:s"), 
+				':city' => $_POST['city'], 
+			); 
+			 
+			try 
+			{ 
+				$stmt = $db->prepare($query); 
+				$result = $stmt->execute($query_params); 
+			} 
+			catch(PDOException $ex) 
+			{   
+				die("Failed to run query: " . $ex->getMessage()); 
+			} 
+			 
+			header("Location: index.php"); 
+			  
+			die(); 
+		} 
+	}?>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   
@@ -7,26 +87,31 @@
   
  
   <nav id="signin">
-  <li>
+  	<?php if (!empty($_POST)) { ?>
+							
+				<div>
+					<h2>Obrigado <?php echo $_POST['firstname']." ".$_POST['lastname'];?></h2>
 
-    <ul>
-      <form class="dark" action="#">
-        <p>
-          <input type="checkbox" id="female" onclick="radiobutton(this);"/>
-          <label for="female">Female</label>
-          <input type="checkbox" id="male" onclick="radiobutton(this);"/>
-          <label for="male" id="male">Male</label>
-      </p>      
-      </form>
-    </ul>
-
-    <ul>
-
-      <form class = "birthday">
-
+					<p>Seja muito bem vindo.</p>
+				</div>
+							
+							
+							
+	<?php }else{ ?>
+   <form action="signin.php" method="post" data-toggle="validator" role="form">
+	  <li>
+		<ul>
+			<p>
+			  <input type="checkbox" id="female" onclick="radiobutton(this);"/>
+			  <label for="female">Female</label>
+			  <input type="checkbox" id="male" onclick="radiobutton(this);"/>
+			  <label for="male" id="male">Male</label>
+		  </p>   
+		</ul>
+		<ul>
       BIRTHDAY <br>
 
-      <select id="birthdayoption">
+      <select name="birthdayday" id="birthdayoption">
         <option>DAY ------</option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -61,7 +146,7 @@
         <option value="31">31</option>
       </select>
 
-      <select id="birthdayoption">
+      <select name="birthdaymon" id="birthdayoption">
         <option>MONTH ---</option>
         <option value="1">January</option>
         <option value="2">February</option>
@@ -78,7 +163,7 @@
       </select>
 
 
-      <select id="birthdayoption">
+      <select name="birthdayyer" id="birthdayoption">
         <option>YEAR -----</option>
         <option value="2008">2008</option>
         <option value="2007">2007</option>
@@ -146,58 +231,56 @@
         <option value="1945">1945</option>
       </select>
       
-      </form>
-
-      <form>
-      
               <fieldset id="signinform">
                 
-                <input id="city" type="text" name="city" placeholder="City" >  </input>
+                <input id="city" type="text" name="city" placeholder="City" required>  </input>
                   <svg height="7" width="550">
                   <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
                   </svg> 
                 
-                <input id="firstname" type="text" name="firstname" placeholder="firstname" ></input>
+                <input id="firstname" type="text" name="firstname" placeholder="firstname" required></input>
                   <svg height="7" width="550">
                   <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
                   </svg> 
 
-                <input id="lastname" type="text" name="lastname" placeholder="lastname" ></input>
+                <input id="lastname" type="text" name="lastname" placeholder="lastname" required></input>
                   <svg height="7" width="550">
                   <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
                   </svg>
 
-                <input id="username" type="text" name="username" placeholder="username" >  </input>
+                <input id="username" type="text" name="username" placeholder="username" required>  </input>
                   <svg height="7" width="550">
                   <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
                   </svg> 
                 
-                <input id="email" type="text" name="email" placeholder="email" ></input>
+                <input id="email" type="text" name="email" placeholder="email" required></input>
                   <svg height="7" width="550">
                   <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
                   </svg> 
 
-                <input id="password" type="text" name="password" placeholder="password" ></input>
+                <input id="password" type="password" name="password" placeholder="password" required></input>
                   <svg height="7" width="550">
                   <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
                   </svg>
 
-                <input id="confirmpassword" type="text" name="confirmpassword" placeholder="confirm password" ></input>
+                <input id="confirmpassword" type="password" name="confirmpassword" placeholder="confirm password" required></input>
                   <svg height="7" width="550">
                   <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
                   </svg>
               
               </fieldset>
 
-              <input type="submit" value="Submit" id="submit">
+			<input type="hidden" name="singin">
+            <input type="submit" value="Submit" id="submit">
 
-      </form>
       
 
-    </ul>
+		</ul>
    
 
-  </li>
+	</li>
+   </form>
+   <?php }?>
   </nav>
 
   </div>
