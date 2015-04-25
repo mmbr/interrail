@@ -9,7 +9,7 @@
 			$query_params = array( 
 				':username' => $_POST['username'] 
 			); 
-			 
+			
 			try { 
 				$stmt = $db->prepare($query); 
 				$result = $stmt->execute($query_params); 
@@ -25,12 +25,12 @@
 				$check_password = hash('sha256', $_POST['password'] . $row['salt']); 
 				for($round = 0; $round < 65536; $round++) 
 				{ 
-					$check_password = hash('sha256', $check_password . $row['salt']); 
+					$check_password = hash('sha256', $check_password . $row['salt']);
 				} 
 				 
 				if($check_password === $row['password']) 
 				{ 
-					$login_ok = true; 
+					$login_ok = true;
 				} 
 			} 
 			 
@@ -40,8 +40,8 @@
 				 
 				$_SESSION['user'] = $row; 
 				  
-				header("Location: private.php");
-				die(); 
+				//header("Location: private.php");
+				//die(); 
 			} 
 			else {
 				header( "Location: ?error=1");
@@ -158,13 +158,13 @@
 		<?php if (isset($_GET['error'])) { if ($_GET['error'] == 1) { ?>
 			<div>Falha no login!</div>
 		<?php } } ?>
-            <form action="index.php" method="post">
+            <form action="" method="post">
               <fieldset id="inputs">
                 <input id="username" type="text" name="username" placeholder="Username" required>  </input>
                   <svg height="7" width="200" id="loginsvg">
                   <line x1="0" y1="0" x2="200" y2="0" />
                   </svg> 
-                <input id="password" type="password" name="Password" placeholder="Password" required></input>
+                <input id="password" type="password" name="password" placeholder="Password" required></input>
                   <svg height="7" width="200" id="loginsvg">
                   <line x1="0" y1="0" x2="200" y2="0" />
                   </svg> 
