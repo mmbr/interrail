@@ -31,7 +31,7 @@
           $('nav a[href^="theteam.php').addClass('active');
         } else if(loc.toLowerCase().indexOf("contact.php") >= 0){
           $('nav a[href^="contact.php').addClass('active');
-        } else if(loc.toLowerCase().indexOf("forum.php") >= 0){
+        } else if(loc.toLowerCase().indexOf("forum") >= 0){
           $('nav a[href^="forum.php').addClass('active');
         } else if(loc.toLowerCase().indexOf("contactme.php") >= 0){
               $('nav a[href^="contactme.php').addClass('active');
