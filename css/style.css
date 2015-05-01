@@ -572,3 +572,78 @@ h14 {
   margin-top: 15px;
   margin-bottom: 5px;
 }
+
+
+/* FORUM */
+
+#divForum a{
+  color: black;
+}
+
+#divForum h13{
+  font-size: 9px;
+}
+
+#forum_space{
+  margin-bottom: 3px;
+}
+
+#divForum{
+  width: 80%;
+  float: left;
+  position: relative;
+  padding-top: 6%;
+  padding-left: 10%;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Oswald';
+  font-weight: 700;
+  font-size: 10pt;
+}
+
+#forum{
+  list-style: none;
+}
+
+#formInfo{
+  z-index: 5; 
+  list-style: none;
+  width: 63%;
+  line-height: 19px;
+}
+
+.alignleft {
+  float: left;
+  padding-right: 17px;
+}
+
+.alignright {
+  float: right;
+  padding-left: 17px;
+}
+
+#forumsvg{
+  stroke: black;
+  stroke-width: 5;
+    margin-top: -7px;
+}
+
+#divforum h11 {
+  text-transform: none;  
+  font-family: 'Roboto';
+  font-weight: 300;
+   font-size: 10pt;
+}
+
+.forum_li{
+  padding-bottom: 35px;
+}
+
+#textboxUm{
+  margin-bottom: 6px;
+}
+
+#forumUm_legenda .alignleft, .alignright{
+  text-transform: none;
+  font-size: 8pt;
+}
