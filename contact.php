@@ -46,22 +46,22 @@
 					
 									
 					<input id="firstname" type="text" name="firstname" placeholder="firstname" required></input>
-					  <svg height="7" width="550">
+					  <svg height="7" class="formline">
 					  <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
 					  </svg> 
 
 					<input id="lastname" type="text" name="lastname" placeholder="lastname" required ></input>
-					  <svg height="7" width="550">
+					  <svg height="7" class="formline">
 					  <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
 					  </svg>
 					
 					 <input id="email" type="email" name="email" placeholder="your e-mail" required></input>
-					  <svg height="7" width="550">
+					  <svg height="7" class="formline" >
 					  <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
 					  </svg> 
 
 					  <input id="subject" type="text" name="subject" placeholder="subject" required></input>
-					  <svg height="7" width="550">
+					  <svg height="7" class="formline">
 					  <line x1="0" y1="0" x2="1000" y2="0" style="stroke:black;stroke-width:7" />
 					  </svg>
 					

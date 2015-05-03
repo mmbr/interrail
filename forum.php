@@ -25,7 +25,7 @@
 
             	
 
-            	<svg height="7" width="2000" id="forumsvg">
+            	<svg height="7" class="forumline" id="forumsvg">
                 <line x1="0" y1="0" x2="29.5%" y2="0" />
                 </svg> 
 
@@ -50,7 +50,7 @@
 
             	
 
-            	<svg height="7" width="2000" id="forumsvg">
+            	<svg height="7" class="forumline" id="forumsvg">
                 <line x1="0" y1="0" x2="29.5%" y2="0" />
                 </svg> 
 
@@ -74,7 +74,7 @@
 
             	
 
-            	<svg height="7" width="2000" id="forumsvg">
+            	<svg height="7" class="forumline" id="forumsvg">
                 <line x1="0" y1="0" x2="29.5%" y2="0" />
                 </svg> 
 
@@ -98,7 +98,7 @@
 
             	
 
-            	<svg height="7" width="2000" id="forumsvg">
+            	<svg height="7" class="forumline" id="forumsvg">
                 <line x1="0" y1="0" x2="29.5%" y2="0" />
                 </svg> 
 
