@@ -83,31 +83,27 @@ color: yellow;
   stroke-width: 7;
 }
 
-
 #loginlink{
   list-style: none;
 }
-
 
 #loginlink a:hover{  
   border-bottom: 2px solid;
 }
 
-
 #logincontent{
-  display: none;
-  background-color: rgba(0, 0, 0, 0.65);
-  position: absolute;
-  z-index: 5; 
-  list-style: none;
-    margin-left: -9.7%;
-  width: 263px;
-
-  padding-left: 25px;
-  padding-right: 20px;
-  padding-top: 15px;
-  border: 5px solid yellow;
-  line-height: 19px;
+	  display: none;
+	  background-color: rgba(0, 0, 0, 0.65);
+	  position: absolute;
+	  z-index: 5; 
+	  list-style: none;
+	  margin-left: 10%;
+	  width: 263px;
+	  padding-left: 25px;
+	  padding-right: 20px;
+	  padding-top: 15px;
+	  border: 5px solid yellow;
+	  line-height: 19px;
 }
 
 #inputs input{
@@ -392,12 +388,12 @@ outline: 0;
 }
 
 #submit{
-  padding-top: 15px;
-  text-transform: uppercase;
-  float: right;
-  margin-right: 38%;
-  background: transparent;
-  border: 0px;
+	padding-top: 15px;
+	text-transform: uppercase;
+	float: right;
+    margin: 0 50%;
+	background: transparent;
+	border: 0px;
 }
 
 
@@ -645,6 +641,9 @@ h14 {
 		display: inline-block;
 		margin-left: 4%;
 	}
+	#logincontent{
+		margin-left: -10%;
+	}
 	#hello {
 		margin-left: 20%;
 		width: 80%;
@@ -709,7 +708,10 @@ h14 {
 @media only screen and (min-width: 768px){
 	#menu {
 		width: 15%;
-	} 
+	}
+	#logincontent{
+		margin-left: -2%;
+	}
 	#hello {
 		margin-left: 20%;
 		width: 41%;
@@ -744,6 +746,9 @@ h14 {
 
 }
 @media only screen and (min-width: 1140px){
+	#logincontent{
+		margin-left: 10%;
+	}
 	#hello {
 		margin-left: 26%;
 		width: 31%;

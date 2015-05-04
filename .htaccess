@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteRule ^forum/([A-Za-z0-9-]+)/([A-Za-z0-9-]+)/?$ forum.php?cat=$1&topic=$2 [L]
+RewriteRule ^forum/([A-Za-z0-9-]+)/?$ forum.php?cat=$1 [L]
+RewriteRule ^about about.php [L]
+RewriteRule ^theteam theteam.php [L]
+RewriteRule ^contact contact.php [L]
+RewriteRule ^forum forum.php [L]
+RewriteRule ^signin signin.php [L]

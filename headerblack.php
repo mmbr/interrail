@@ -3,7 +3,7 @@
 
   <head>
 
-    <title>Bootstrap 101 Template</title>
+	<title>InterrailGuide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -89,9 +89,6 @@
   </head>
 
   <body>
-
-
-
     
 
    <!--MENU-->
@@ -142,34 +139,6 @@
             </form>
           </div>     
    </nav>
-
-<!--
-   <nav>
-      <ul>
-        <li id="login">
-          <a id="login-trigger" href="#">
-            Log in <span>▼</span>
-          </a>
-          <div id="login-content">
-            <form>
-              <fieldset id="inputs">
-                <input id="username" type="email" name="Email" placeholder="Your email address" required>   
-                <input id="password" type="password" name="Password" placeholder="Password" required>
-              </fieldset>
-              <fieldset id="actions">
-                <input type="submit" id="submit" value="Log in">
-                <label><input type="checkbox" checked="checked"> Keep me signed in</label>
-              </fieldset>
-            </form>
-          </div>                     
-        </li>
-        <li id="signup">
-          <a href="">Sign up FREE</a>
-        </li>
-      </ul>
-    <nav>
-  -->
-
 
  </header>
 

@@ -79,6 +79,8 @@
 		<link href='http://fonts.googleapis.com/css?family=Advent+Pro:700,400,300,600,500' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
 		<link href='http://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+		
+		<link href="css/img/logoyellow.png" rel="shortcut icon">
 
         <script>
 		  $(function() {
